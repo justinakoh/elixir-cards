@@ -1,18 +1,9 @@
+# defmodule will create a module named cards - a module is a collection of functions
 defmodule Cards do
-  @moduledoc """
-  Documentation for `Cards`.
-  """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Cards.hello()
-      :world
-
-  """
+  # Function called hello
   def hello do
-    :world
+    "hi there!"
   end
+
 end
