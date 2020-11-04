@@ -1,9 +1,8 @@
 # defmodule will create a module named cards - a module is a collection of functions
 defmodule Cards do
 
-  # Function called hello
-  def hello do
-    "hi there!"
+  def create_deck do
+    ["Ace", "Two", "Three"]
   end
 
 end
