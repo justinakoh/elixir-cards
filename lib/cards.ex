@@ -6,8 +6,8 @@ defmodule Cards do
     suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
 
     # Iterating through to get every combination of all the elements: using a list comphrehension
-    for suit <- suits do
-      suit
+    for suit <- suits, value <- values do
+      "#{value} of  #{suit}"
     end
   end
 
