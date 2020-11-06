@@ -2,7 +2,13 @@
 defmodule Cards do
 
   def create_deck do
-    ["Ace", "Two", "Three"]
+    values = ["Ace", "Two", "Three", "Four", "Five"]
+    suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
+
+    # Iterating through to get every combination of all the elements: using a list comphrehension
+    for suit <- suits do
+      suit
+    end
   end
 
   # Method which shuffles the deck of cards
