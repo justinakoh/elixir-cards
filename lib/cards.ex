@@ -26,4 +26,10 @@ defmodule Cards do
     Enum.split(deck, hand_size)
   end
 
+  #This saves it to a certain place
+  def save(deck, filename) do
+    binary = :erlang.term_to_binary(deck)  #this (:erlang) is to invoke erlang code. This converts it to a form which can be saved
+    File.write(filename, binary)
+  end
+
 end
