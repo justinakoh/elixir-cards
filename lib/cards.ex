@@ -1,5 +1,8 @@
 # defmodule will create a module named cards - a module is a collection of functions
 defmodule Cards do
+  @moduledoc """
+    Provide methods for creting and handling a deck of cards
+  """
 
   #Creates a new deck of cards
   def create_deck do
