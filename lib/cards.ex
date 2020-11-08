@@ -1,6 +1,7 @@
 # defmodule will create a module named cards - a module is a collection of functions
 defmodule Cards do
 
+  #Creates a new deck of cards
   def create_deck do
     values = ["Ace", "Two", "Three", "Four", "Five"]
     suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
@@ -37,5 +38,12 @@ defmodule Cards do
       {:ok, binary} -> :erlang.binary_to_term binary
       {:error, _reason} -> "That file does not exist"
     end
+  end
+
+  #This calls three methods written within this module one after another
+  def create_hand(hand_size) do
+    deck = Cards.create_deck
+    deck = Cards.shuffle(deck)
+    hand = Cards.deal(deck, hand_size)
   end
 end
