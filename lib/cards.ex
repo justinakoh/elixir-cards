@@ -41,9 +41,11 @@ defmodule Cards do
   end
 
   #This calls three methods written within this module one after another
+  #It now uses the pipe operator
   def create_hand(hand_size) do
-    deck = Cards.create_deck
-    deck = Cards.shuffle(deck)
-    hand = Cards.deal(deck, hand_size)
+    #The same thing as above, but using the pipe operator
+    Cards.create_deck
+    |> Cards.shuffle
+    |> Cards.deal(hand_size)
   end
 end
