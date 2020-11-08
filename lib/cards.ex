@@ -4,7 +4,9 @@ defmodule Cards do
     Provide methods for creting and handling a deck of cards
   """
 
-  #Creates a new deck of cards
+  @doc """
+    Returns a list of strings representing a deck of playing cards
+  """
   def create_deck do
     values = ["Ace", "Two", "Three", "Four", "Five"]
     suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
@@ -15,27 +17,46 @@ defmodule Cards do
     end
   end
 
-  # Method which shuffles the deck of cards
+  @doc """
+    Shuffles a list of cards
+  """
   def shuffle(deck) do
     Enum.shuffle(deck)
   end
 
-  #check whether the deck contains the card in it
+  @doc """
+    Check whether the deck contains the card in it
+  """
   def contains?(deck, card) do
     Enum.member?(deck, card)
   end
 
-  #This deals a number of cards
+  @doc """
+    Divides a deck into a hand and the remainder of the deck.
+    The `hand_size` argument indicates how many cards should be in the hand.
+
+  ## Examples
+
+      iex> deck = Cards.create_deck
+      iex> {hand, deck} = Cards.deal(deck, 1)
+      iex> hand
+      ["Ace of Spades"]
+  """
   def deal(deck, hand_size) do
     Enum.split(deck, hand_size)
   end
 
-  #This saves it to a certain place
+  @doc """
+    Saves the deck of cards using a certain filename
+  """
   def save(deck, filename) do
     binary = :erlang.term_to_binary(deck)  #this (:erlang) is to invoke erlang code. This converts it to a form which can be saved
     File.write(filename, binary)
   end
 
+  @doc """
+    This loads a deck of cards with the specific filename
+  """
   def load(filename) do
     case File.read(filename) do
       {:ok, binary} -> :erlang.binary_to_term binary
